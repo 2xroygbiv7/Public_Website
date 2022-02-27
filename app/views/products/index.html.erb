@@ -1,0 +1,52 @@
+<div>
+  <% if notice.present? %>
+    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+  <% end %>
+  
+  <h1 class="font-bold text-4xl text-blue-500">Products</h1>
+    <br/>
+    <p>Total Products:</p>
+    <br/>
+    <table class="table-auto">
+      <thead>
+        <tr>
+          <th>Code</th>
+          <th>Name</th>
+          <th>Category</th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @products.each do |product| %>
+          <tr>
+            <td>
+              <%= product.code %>
+            </td>
+            <td>
+              <%= product.name %>
+            </td>
+            <td>
+              <%= "blank" %>
+            </td>
+            <td>
+              <%= link_to 'Show', product %>
+            </td>
+            <td>
+              <%= link_to 'Edit', edit_product_path(product) %>
+            </td>
+            <td>
+              <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <br/>
+    <%= link_to 'New product', new_product_path, class: "text-center rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
+    
+</div>
+
+
+
