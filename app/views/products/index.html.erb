@@ -3,24 +3,20 @@
     <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
   <% end %>
   
-  <h1 class="font-bold text-4xl text-blue-500">Products</h1>
-    <br/>
-    <p>Total Products:</p>
-    <br/>
-    <table class="table-auto">
-      <thead>
+  <h1 class="font-bold mb-4 text-4xl text-blue-500">Products</h1>
+    <p class="mt-5">Total Products:</p>
+    <table class="mt-5 min-w-full table-auto">
+      <thead class="bg-gray-800 text-gray-300">
         <tr>
           <th>Code</th>
           <th>Name</th>
           <th>Category</th>
-          <th></th>
-          <th></th>
-          <th></th>
+          <th colspan="3">Actions</th>
         </tr>
       </thead>
       <tbody>
         <% @products.each do |product| %>
-          <tr>
+          <tr class="border-4 border-gray-200">
             <td>
               <%= product.code %>
             </td>
@@ -43,8 +39,7 @@
         <% end %>
       </tbody>
     </table>
-    <br/>
-    <%= link_to 'New product', new_product_path, class: "text-center rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
+    <%= link_to 'New product', new_product_path, class: "btn-primary mt-5" %>
     
 </div>
 
