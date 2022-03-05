@@ -1,0 +1,17 @@
+<div class="max-w-6xl mx-auto px-4">
+  <%= link_to root_path do %>
+    <%= image_tag "pentel-header-logo.png", alt: "logo", class: "flex items-center py-4 px-2" %>
+  <% end %>
+</div>
+
+<nav class="mb-5 bg-red-500 shadow-lg">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="flex justify-between">
+      <div class="flex space-x-7">
+      <div class="hidden md:flex items-center space-x-1">
+        <%= link_to "Home", root_path, class: "py-4 px-2 text-white font-semibold" %>
+        <%= link_to "Products", products_path, class: "py-4 px-2 text-white font-semibold" %>
+      </div>
+    </div>
+  </div>
+</nav>

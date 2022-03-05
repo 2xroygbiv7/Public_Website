@@ -1,0 +1,10 @@
+<% flash.each do |type, message| %>
+  <div class="absolute top-4 right-0 left-0 z-10">
+    <% if type == "alert" %>
+      <p class="py-2 px-3 bg-red-50 mb-5 text-red-500 font-medium rounded-lg inline-block" id="alert"><%= alert %></p>
+    <% end %>
+    <% if type == "notice" %>
+      <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+    <% end %>
+  </div>
+<% end %>
