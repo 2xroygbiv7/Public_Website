@@ -1,17 +1,20 @@
-<div id="<%= dom_id product %>">
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Code:</strong>
+<tr class="border-4 border-gray-200">
+  <td>
     <%= product.code %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Name:</strong>
+  </td>
+  <td>
     <%= product.name %>
-  </p>
-
-  <% if action_name != "show" %>
-    <%= link_to "Show this product", product, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= link_to 'Edit this product', edit_product_path(product), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
-    <hr class="mt-6">
-  <% end %>
-</div>
+  </td>
+  <td>
+    <%= product.category %>
+  </td>
+  <td>
+    <%= link_to 'Show', product %>
+  </td>
+  <td>
+    <%= link_to 'Edit', edit_product_path(product) %>
+  </td>
+  <td>
+    <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </td>
+</tr>
