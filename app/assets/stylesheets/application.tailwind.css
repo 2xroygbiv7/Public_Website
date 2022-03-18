@@ -4,6 +4,6 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-blue-700 px-5 py-3 rounded-lg shadow-lg font-semibold text-sm text-white inline-block w-full hover:text-white hover:bg-blue-800 focus:outline-none focus:ring focus:ring-offset-2 focus:ring-blue-800 focus:ring-opacity-50 active:bg-blue-900 dark:focus:ring-blue-400 dark:ring-offset-gray-900 sm:w-auto md:px-10 md:py-4 md:text-lg
+    @apply bg-blue-700 px-4 py-3 text-lg mt-4 rounded-lg shadow-lg font-semibold text-sm text-white inline-block w-auto hover:text-white hover:bg-blue-800 focus:outline-none focus:ring focus:ring-offset-2 focus:ring-blue-800 focus:ring-opacity-50 active:bg-blue-900
   }
 }

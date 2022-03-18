@@ -4,28 +4,22 @@
       <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
     <% end %>
 
-    <div id="<%= dom_id @product %>">
-      <p class="my-5">
-        <strong class="block font-medium mb-1">Code:</strong>
-        <%= @product.code %>
+    <div id="<%= dom_id @product %>" class="px-3 py-5 rounded-md border bg-blue-50">
+      <%= image_tag "https://placehold.co/330?text=#{@product.code}", class: "mx-auto  mb-5 rounded-lg"%>
+      <p class="my-1">
+      <strong class="font-medium mb-1">Code: </strong>
+      <%= @product.code %>
       </p>
-    
-      <p class="my-5">
-        <strong class="block font-medium mb-1">Name:</strong>
-        <%= @product.name %>
+      <p class="my-1">
+      <strong class="font-medium mb-1">Name: </strong>
+      <%= @product.name %>
+      <p class="my-1">
+      <strong class="font-medium mb-1">Category: </strong>
+      <%= @product.category %>
       </p>
-    
-      <% if action_name != "show" %>
-        <%= link_to "Show this product", product, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-        <%= link_to 'Edit this product', edit_product_path(product), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
-        <hr class="mt-6">
-      <% end %>
-     </div>  
-
-    <%= link_to 'Edit this product', edit_product_path(@product), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <div class="inline-block ml-2">
-      <%= button_to 'Destroy this product', product_path(@product), method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
-    </div>
-    <%= link_to 'Back to products', products_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    </div>  
+    <%= link_to 'Edit this product', edit_product_path(@product), class: "btn-primary inline-block" %>
+    <%= link_to 'Destroy this product', product_path(@product), method: :delete, class: "btn-primary inline-block" %>
+    <%= link_to 'Back to products', products_path, class: "btn-primary inline-block" %>
   </div>
 </div>
