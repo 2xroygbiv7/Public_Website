@@ -1,23 +1,19 @@
-<tr class="border-4 border-gray-200">
-  <td>
+<div class="px-3 py-5 rounded-md border bg-blue-50">
+  <div class="">
+    <%= image_tag "https://placehold.co/330?text=#{product.code}", class: "rounded-lg"%>
+    <p class="my-1">
+    <strong class="font-medium mb-1">Code: </strong>
     <%= product.code %>
-  </td>
-  <td>
+    </p>
+    <p class="my-1">
+    <strong class="font-medium mb-1">Name: </strong>
     <%= product.name %>
-  </td>
-  <td>
+    <p class="my-1">
+    <strong class="font-medium mb-1">Category: </strong>
     <%= product.category %>
-  </td>
-  <td>
-    <%= product.image %>
-  </td>
-  <td>
-    <%= link_to 'Show', product %>
-  </td>
-  <td>
-    <%= link_to 'Edit', edit_product_path(product) %>
-  </td>
-  <td>
-    <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
-  </td>
-</tr>
+    </p>
+    <div>
+      <%= link_to 'Show', product, class: "btn-primary" %>
+    </div>
+  </div>
+</div>
