@@ -1,14 +1,19 @@
+require 'csv'
+
 Category.create!([{
-    name: "Energel"
+    name: "leads"
   }])
-  
-for i in 1..8
-  Product.create!([{
-    code: "BL00#{i}",
-    name: "Energel BL00#{i}",
-    category_id: Category.first.id,
-    image: "https://placehold.co/330x330?text=BL00#{i}"
-  }])
+puts("#{Category.count} categories created")
+
+csv_text = File.read(Rails.root.join('db', 'data', 'product.csv'))
+csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
+csv.each do |row|
+  t = Product.new
+  t.code = row['code']
+  t.name = row['name']
+  t.category_id = Category.find_by(name: row['category']).id
+  t.save
+  puts "#{t.code}, #{t.name} saved"
 end
 
-
+puts("#{Product.count} products created")
